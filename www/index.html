@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.11.3];shiny[0.12.2.9005];bootstrap-datepicker[1.0.2];selectize[0.11.2];ionrangeslider[2.0.12];strftime[0.9.2];htmlwidgets[0.5];dygraphs[1.1.1];moment[2.8.4];moment-timezone[0.2.5];dygraphs-binding[0.5];bootstrap[3.3.5]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<link href="shared/datepicker/css/datepicker.css" rel="stylesheet" />
+<script src="shared/datepicker/js/bootstrap-datepicker.min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+<script src="shared/selectize/js/selectize.min.js"></script>
+<link href="shared/ionrangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+<link href="shared/ionrangeslider/css/ion.rangeSlider.skinShiny.css" rel="stylesheet" />
+<script src="shared/ionrangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="shared/strftime/strftime-min.js"></script>
+<script src="htmlwidgets-0.5/htmlwidgets.js"></script>
+<link href="dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="moment-2.8.4/moment.js"></script>
+<script src="moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="dygraphs-binding-0.5/dygraphs.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>
+  <title>
+    <div>
+      <h2>Benchmark Your Returns With Indexes</h2>
+      <h5>Investors look to broad indexes as benchmarks to help them gauge not only how well the markets are performing, but also how well they, as investors, are performing. 
+                           For those who own stocks, they look to indexes like the S&amp;P 500, the Dow Jones Industrial Average and the Nasdaq Composite to tell them ''where the market is''. 
+                           The values of these indexes are displayed every day by financial media outlets all over the world. Most investors hope to meet or exceed the returns of these indexes 
+                           over time.</h5>
+      <h5>
+        To read more about indexes, see 
+        <a href="http://www.investopedia.com/articles/analyst/062502.asp">The ABCs Of Stock Indexes</a>
+         and 
+        <a href="http://www.investopedia.com/university/indexes/">Index Investing Tutorial.</a>
+      </h5>
+    </div>
+  </title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>
+          <div>
+            <h2>Benchmark Your Returns With Indexes</h2>
+            <h5>Investors look to broad indexes as benchmarks to help them gauge not only how well the markets are performing, but also how well they, as investors, are performing. 
+                           For those who own stocks, they look to indexes like the S&amp;P 500, the Dow Jones Industrial Average and the Nasdaq Composite to tell them ''where the market is''. 
+                           The values of these indexes are displayed every day by financial media outlets all over the world. Most investors hope to meet or exceed the returns of these indexes 
+                           over time.</h5>
+            <h5>
+              To read more about indexes, see 
+              <a href="http://www.investopedia.com/articles/analyst/062502.asp">The ABCs Of Stock Indexes</a>
+               and 
+              <a href="http://www.investopedia.com/university/indexes/">Index Investing Tutorial.</a>
+            </h5>
+          </div>
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="well">
+          <div>
+            <h4 style="color:orange">Chart settings</h4>
+          </div>
+          <div id="chrPeriod" class="shiny-date-range-input form-group shiny-input-container">
+            <label class="control-label" for="chrPeriod">Chart period:</label>
+            <div class="input-daterange input-group">
+              <input class="input-sm form-control" type="text" data-date-language="en" data-date-weekstart="0" data-date-format="dd-mm-yyyy" data-date-start-view="month" data-initial-date="01-01-2009"/>
+              <span class="input-group-addon"> to </span>
+              <input class="input-sm form-control" type="text" data-date-language="en" data-date-weekstart="0" data-date-format="dd-mm-yyyy" data-date-start-view="month" data-initial-date="2015-11-21"/>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="stock">US Blue Chip Company</label>
+            <div>
+              <select id="stock"><option value="IBM" selected>International Business Machines Corp.</option>
+<option value="XOM">Exxon Mobil Corp.</option>
+<option value="CVX">Chevron Corp.</option>
+<option value="PG">Procter &amp; Gamble Co.</option>
+<option value="MMM">3M Co.</option>
+<option value="JNJ">Johnson &amp; Johnson</option>
+<option value="MCD">McDonald's Corp.</option>
+<option value="WMT">Wal-Mart Stores Inc.</option>
+<option value="UTX">United Technologies Corp.</option>
+<option value="KO">Coca-Cola Co.</option>
+<option value="BA">Boeing Co.</option>
+<option value="CAT">Caterpillar Inc.</option>
+<option value="JPM">JPMorgan Chase &amp; Co.</option>
+<option value="HPQ">Hewlett-Packard Co.</option>
+<option value="VZ">Verizon Communications Inc.</option>
+<option value="T">AT&amp;T Inc.</option>
+<option value="KFT">Kraft Foods Inc. Cl A</option>
+<option value="DD">E.I. DuPont de Nemours &amp; Co.</option>
+<option value="MRK">Merck &amp; Co. Inc.</option>
+<option value="DIS">Walt Disney Co.</option>
+<option value="HD">Home Depot Inc.</option>
+<option value="MSFT">Microsoft Corp.</option>
+<option value="AXP">American Express Co.</option>
+<option value="BAC">Bank of America Corp.</option>
+<option value="PFE">Pfizer Inc.</option>
+<option value="GE">General Electric Co.</option>
+<option value="INTC">Intel Corp.</option>
+<option value="AA">Alcoa Inc.</option>
+<option value="C">Citigroup Inc.</option>
+<option value="GM">General Motors Corp.</option></select>
+              <script type="application/json" data-for="stock" data-nonempty="">{}</script>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="index">Market Index</label>
+            <div>
+              <select id="index"><option value="^DJI" selected>Dow Jones Industrial Average</option>
+<option value="^GSPC">S&amp;P 500</option>
+<option value="^IXIC">NASDAQ Composite</option></select>
+              <script type="application/json" data-for="index" data-nonempty="">{}</script>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="freq">Frequency</label>
+            <div>
+              <select id="freq"><option value="days" selected>days</option>
+<option value="weeks">weeks</option>
+<option value="months">months</option>
+<option value="quarters">quarters</option>
+<option value="years">years</option></select>
+              <script type="application/json" data-for="freq" data-nonempty="">{}</script>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <div class="checkbox">
+              <label>
+                <input id="showgrid" type="checkbox" checked="checked"/>
+                <span>Show Grid</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <h4 style="color:orange">Investment settings</h4>
+          </div>
+          <div id="invPeriod" class="shiny-date-range-input form-group shiny-input-container">
+            <label class="control-label" for="invPeriod">Investment period:</label>
+            <div class="input-daterange input-group">
+              <input class="input-sm form-control" type="text" data-date-language="en" data-date-weekstart="0" data-date-format="dd-mm-yyyy" data-date-start-view="month" data-initial-date="07-01-2009"/>
+              <span class="input-group-addon"> to </span>
+              <input class="input-sm form-control" type="text" data-date-language="en" data-date-weekstart="0" data-date-format="dd-mm-yyyy" data-date-start-view="month" data-initial-date="11-20-2014"/>
+            </div>
+          </div>
+          <div class="form-group shiny-input-container">
+            <label class="control-label" for="invSize">Invested amount:</label>
+            <input class="js-range-slider" id="invSize" data-min="0" data-max="10000" data-from="10000" data-step="500" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="5" data-drag-interval="true" data-data-type="number"/>
+          </div>
+          <br/>
+          <p>
+            <em>
+              Documentation:
+              <a href="http://rpubs.com/pluketic/129370">Benchmark Your Returns With Indexes</a>
+            </em>
+          </p>
+          <p>
+            <em>
+              Presentation:
+              <a href="http://rpubs.com/pluketic/129373">Benchmark Your Returns With Indexes</a>
+            </em>
+          </p>
+          <p>
+            <em>
+              Github repository:
+              <a href="https://github.com/pluketic/DDP_CourseProject">DDP Course Project</a>
+            </em>
+          </p>
+        </form>
+      </div>
+      <div class="col-sm-8">
+        <h4>
+          <div id="ChartTitle" class="shiny-text-output"></div>
+        </h4>
+        <div id="Dygraph" style="width:100%; height:400px" class="dygraphs html-widget html-widget-output"></div>
+        <br/>
+        <h4>
+          <div id="StockPerformanceTitle" class="shiny-text-output"></div>
+        </h4>
+        <br/>
+        <div id="StockPerformanceComment" class="shiny-text-output"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
