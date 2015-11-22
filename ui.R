@@ -62,7 +62,7 @@ shinyUI(pageWithSidebar(
                 br(),
                 p(em("Documentation:",a("Benchmark Your Returns With Indexes",href="http://rpubs.com/pluketic/129370"))),
                 p(em("Presentation:",a("Benchmark Your Returns With Indexes",href="http://rpubs.com/pluketic/129484"))),
-                p(em("Github repository:",a("DDP Course Project",href="https://github.com/pluketic/DDP_CourseProject")))
+                p(em("Github repository:",a("DDP Course Project",href="http://github.com/pluketic/DDP_CourseProject")))
         ),
         
         
