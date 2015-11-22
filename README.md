@@ -4,10 +4,11 @@ Petar Luketic
 
 ###__Links__
 
-1. **Shiny application** can be accessed [here](http://pluketic.shinyapps.io/DDP_CourseProject/index.html).
+1. **Shiny application** can be accessed [here](http://pluketic.shinyapps.io/DDP_CourseProject/index.html).   
+<small>If by any chance, chart doen't appear in the html link provided, please try with this [link](http://pluketic.shinyapps.io/DDP_CourseProject) first.</small>    
 
 2. **R presentation** can be found [here](http://rpubs.com/pluketic/129484).   
-   <small>If by any chance, chart doen't appear in the html link provided, please try with this [link](http://pluketic.shinyapps.io/DDP_CourseProject) first.</small>
+   
 
 ###__Background__   
 
