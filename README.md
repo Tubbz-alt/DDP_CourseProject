@@ -6,7 +6,7 @@ Petar Luketic
 
 1. **Shiny application** can be accessed [here](http://pluketic.shinyapps.io/DDP_CourseProject/index.html).
 
-2. Associated **Shiny presentation** can be found [here](http://rpubs.com/pluketic/129373).
+2. **R presentation** can be found [here](http://rpubs.com/pluketic/129373).
 
 ###__Background__   
 
