@@ -2,6 +2,12 @@
 Petar Luketic   
 21-Nov-2015
 
+###__Links__
+
+1. **Shiny application** can be accessed [here](http://pluketic.shinyapps.io/DDP_CourseProject/index.html).
+
+2. Associated **Shiny presentation** can be found [here](http://rpubs.com/pluketic/129373).
+
 ###__Background__   
 
 Investors look to broad indexes as benchmarks to help them gauge not only how well the markets are performing, but also how well they, as investors, are performing. For those who own stocks, they look to indexes like the S&P 500, the Dow Jones Industrial Average and the Nasdaq Composite to tell them ''where the market is''. 
